@@ -1,0 +1,80 @@
+## -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+def build(bld):
+    module = bld.create_ns3_module('applications', ['internet', 'config-store','stats'])
+    module.source = [
+        'model/packet-loss-counter.cc',
+        'model/bulk-send-application.cc',
+        'model/onoff-application.cc',
+        'model/packet-sink.cc',
+        'model/video-data.cc',
+        'model/video-library.cc',
+        'model/video-client.cc',
+        'model/video-server.cc',
+        'model/udp-client.cc',
+        'model/udp-server.cc',
+        'model/seq-ts-header.cc',
+        'model/nuoxus-header.cc',
+        'model/video-trace-client.cc',
+        'model/udp-trace-client.cc',
+        'model/udp-echo-client.cc',
+        'model/udp-echo-server.cc',
+        'model/application-packet-probe.cc',
+        'model/video-cached-server.cc',
+        'model/nuoxus.cc',
+        'model/nuoxus-cache-manager.cc',
+        'model/nuoxus-cache-strategy.cc',
+        'model/nuoxus-cousine-calculator.cc',
+        'model/nuoxus-history-manager.cc',
+        'model/nuoxus-traced-values.cc',
+        'model/nuoxus-header-proactive.cc',
+        'helper/bulk-send-helper.cc',
+        'helper/on-off-helper.cc',
+        'helper/packet-sink-helper.cc',
+        'helper/video-client-server-helper.cc',
+        'helper/udp-client-server-helper.cc',
+        'helper/udp-echo-helper.cc',
+        ]
+
+    applications_test = bld.create_ns3_module_test_library('applications')
+    applications_test.source = [
+        'test/udp-client-server-test.cc',
+        ]
+
+    headers = bld(features='ns3header')
+    headers.module = 'applications'
+    headers.source = [
+        'model/packet-loss-counter.h',
+        'model/bulk-send-application.h',
+        'model/onoff-application.h',
+        'model/packet-sink.h',
+        'model/video-data.h',
+        'model/video-library.h',
+        'model/video-client.h',
+        'model/video-server.h',
+        'model/udp-client.h',
+        'model/udp-server.h',
+        'model/nuoxus-header.h',
+        'model/seq-ts-header.h',
+        'model/video-trace-client.h',
+        'model/udp-trace-client.h',
+        'model/udp-echo-client.h',
+        'model/udp-echo-server.h',
+        'model/application-packet-probe.h',
+        'model/nuoxus-history-manager.h',
+        'model/nuoxus-cache-manager.h',
+        'model/nuoxus-cousine-calculator.h',
+        'model/nuoxus-cache-strategy.h',
+        'model/nuoxus-traced-values.h',
+        'model/nuoxus.h',
+        'model/nuoxus-header-proactive.h',
+        'model/video-cached-server.h',
+        'helper/bulk-send-helper.h',
+        'helper/on-off-helper.h',
+        'helper/packet-sink-helper.h',
+        'helper/video-client-server-helper.h',
+        'helper/udp-client-server-helper.h',
+        'helper/udp-echo-helper.h',
+        ]
+
+    bld.ns3_python_bindings()

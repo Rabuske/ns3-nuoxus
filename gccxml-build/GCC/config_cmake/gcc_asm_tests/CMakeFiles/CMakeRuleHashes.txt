@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+cb84d02ddd8107f005fd0ce71de37ab4 CMakeFiles/test_weak
+cb84d02ddd8107f005fd0ce71de37ab4 CMakeFiles/test_weakref
+9f9f86e98e21f753b23794d54a367c05 weak.o
+21adbeac0de78a5d82fbfce05dd957ef weakref.o

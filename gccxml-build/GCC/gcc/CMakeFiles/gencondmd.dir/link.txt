@@ -1,0 +1,1 @@
+/usr/bin/cc    -w   CMakeFiles/gencondmd.dir/gencondmd.c.o  -o gencondmd -rdynamic libgen.a libiberty.a 
